@@ -1,7 +1,0 @@
-# Build artifacts
-**/bin/
-**/obj/
-
-# CDK output
-cdk.out/
-**/cdk.out/
