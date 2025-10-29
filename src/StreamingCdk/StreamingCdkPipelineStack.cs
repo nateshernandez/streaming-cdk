@@ -1,7 +1,8 @@
 ﻿using Amazon.CDK;
-using Amazon.CDK.Pipelines;
 using Amazon.CDK.AWS.CodeBuild;
+using Amazon.CDK.Pipelines;
 using Constructs;
+using System.Collections.Generic;
 
 namespace StreamingCdk;
 
@@ -36,7 +37,31 @@ public class StreamingCdkPipelineStack : Stack
                 {
                     BuildImage = LinuxBuildImage.STANDARD_7_0,
                     ComputeType = ComputeType.SMALL
-                }
+                },
+                PartialBuildSpec = BuildSpec.FromObject(new Dictionary<string, object>
+                {
+                    {
+                        "version", "0.2"
+                    },
+                    {
+                        "phases", new Dictionary<string, object>
+                        {
+                            {
+                            "install", new Dictionary<string, object>
+                            {
+                                {
+                                    "runtime-versions", new Dictionary<string, object>
+                                    {
+                                        {
+                                        "dotnet", "8.0"
+                                        }
+                                    }
+                                }
+                            }
+                            }
+                        }
+                    }
+                })
             }
         });
 
