@@ -63,6 +63,7 @@ public class StreamingCdkStack : Stack
             {
                 { "AWS_LAMBDA_EXEC_WRAPPER", "/opt/bootstrap" },
                 { "PORT", "8080" },
+                { "ASPNETCORE_URLS", "http://localhost:8080" },
                 { "AWS_LWA_INVOKE_MODE", "response_stream" },
                 { "RUST_LOG", "info" }
             }
