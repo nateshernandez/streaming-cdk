@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello!\n");
+app.MapGet("/", () => "Welcome to the streaming CDK demo!\n");
 
 app.MapGet("/stream", async context =>
 {
