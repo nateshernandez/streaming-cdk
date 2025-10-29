@@ -25,5 +25,10 @@ public class StreamingCdkPipelineStack : Stack
                 Commands = new string[] { "npm install -g aws-cdk", "cdk synth" }
             })
         });
+
+        pipeline.AddStage(new StreamingCdkStage(this, nameof(StreamingCdkStage), new StageProps
+        {
+            Env = props.Env
+        }));
     }
 }
