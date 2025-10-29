@@ -7,8 +7,8 @@ namespace StreamingCdk
         public static void Main(string[] args)
         {
             var app = new App();
-            
-            new StreamingCdkStack(app, "StreamingCdkStack", new StackProps
+
+            new StreamingCdkPipelineStack(app, "streaming-pipeline-stack", new StackProps
             {
                 Env = new Amazon.CDK.Environment
                 {

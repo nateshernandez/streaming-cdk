@@ -1,8 +1,7 @@
-using System;
-using System.Collections.Generic;
 using Amazon.CDK;
 using Amazon.CDK.AWS.Lambda;
 using Constructs;
+using System.Collections.Generic;
 
 namespace StreamingCdk
 {
